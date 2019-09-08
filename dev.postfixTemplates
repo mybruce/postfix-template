@@ -1,0 +1,32 @@
+.pv : promise view
+ ANY  →  promiseView([\
+  checkRes('$expr$_json')\
+  ]).then((res) => { $end$ });
+
+
+.v : set display visible
+ ANY →  this['$expr$'].visible = $val:enum("true", "false")$;
+
+.list : refresh list
+ ANY → this['$expr$'].itemRenderer = $item$;refreshList(this['$expr$'], $arr$);
+
+.tap : tap
+ ANY → this.tap(this['$expr$'], this.$fn$, this);
+
+.max : set progress maximum
+ ANY → this['$expr$'].maximum = $val$;
+
+.val : set progress value
+ ANY → this['$expr$'].value = $val$;
+
+.pb :  set progress
+ ANY → this['$expr$'].maximum = $max$;this['$expr$'].value = $val$;
+
+.ds : dispose
+ ANY → if ($expr$) { $expr$.dispose(); $expr$ = null; }
+
+.uw : dispose
+ ANY → if ($expr$) { $expr$.unwatch(); $expr$ = null; }
+
+.itemTap : set list itemtap
+ ANY → this.disposeArr.push(itemTap(this['$expr$'], this.onTap, this));
