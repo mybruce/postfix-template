@@ -3,7 +3,6 @@
   checkRes('$expr$_json')\
   ]).then((res) => { $end$ });
 
-
 .v : set display visible
  ANY →  this['$expr$'].visible = $val:enum("true", "false")$;
 
@@ -57,13 +56,7 @@
 
 .src : set image source
 	ANY  →  this['$expr$'].source = $end$;
-
-.req : socket request
-	ANY  →  request($expr$).then(res => {if (res) { $end$ }});
-
-.reqp : socket request params
-	ANY  →  request($expr$, {$params$}).then(res => {if (res) { $end$ }});
-
+	
 .box : show box
 	ANY  →  UI.openBox(new $expr$($end$));
 
@@ -111,12 +104,6 @@
 
 .vc : set cache to variable
 	ANY  →  let $var:jsSuggestVariableName()$ = getCache('$expr$');
-
-.confirm : show confirm
-	ANY  →  confirm(tr($expr$)).then(res=> { if (res == 'yes') { $end$ }})
-
-.tip : show tooltip
-	ANY  →  tooltip(tr($expr$));
 
 .tr : translation text
 	ANY  →  tr('$group:enum("act", "tree", "adv", "arena", "base", "battle", "common", "create", "digong", "dl", "event", "finance", "fish", "fly", "guide", "guild", "hero", "home", "main", "mystery", "nest", "npc", "sect", "pet", "tiant", "ui", "un", "union", "youli")$@$expr$')
