@@ -1,0 +1,197 @@
+[
+        {
+            "when": ["expression"],
+            "name": "pv",
+            "body": "promiseView([\n\tcheckRes('{{expr}}_json')\n]).then((res) => { \n\t${0}\n});"
+        },
+        {
+            "when": ["expression"],
+            "name": "v",
+            "body": "this['{{expr}}'].visible = ${1|true,false|};"
+        },
+        {
+            "when": ["expression"],
+            "name": "list",
+            "body": "this['{{expr}}'].itemRenderer = ${1};\nrefreshList(this['{{expr}}'], ${2});"
+        },
+        {
+            "when": ["expression"],
+            "name": "tap",
+            "body": "this.tap(this['{{expr}}'], this.${1}, this);"
+        },
+        {
+            "when": ["expression"],
+            "name": "max",
+            "body": "this['{{expr}}'].maximum = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "val",
+            "body": "this['{{expr}}'].value = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "pb",
+            "body": "this['{{expr}}'].maximum = ${1};this['{{expr}}'].value = ${2};"
+        },
+        {
+            "when": ["expression"],
+            "name": "ds",
+            "body": "if ({{expr}}) { \n\t{{expr}}.dispose(); \n\t{{expr}} = null; \n}"
+        },
+        {
+            "when": ["expression"],
+            "name": "uw",
+            "body": "if ({{expr}}) { \n\t{{expr}}.unwatch(); \n\t{{expr}} = null; \n}"
+        },
+        {
+            "when": ["expression"],
+            "name": "itemTap",
+            "body": "this.disposeArr.push(itemTap(this['{{expr}}'], this.${1}, this));"
+        },
+        {
+            "when": ["expression"],
+            "name": "t",
+            "body": "this['{{expr}}'].text = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "a",
+            "body": "this['{{expr}}'].alpha = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "sx",
+            "body": "this['{{expr}}'].scaleX = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "sy",
+            "body": "this['{{expr}}'].scaleY = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "sxy",
+            "body": "this['{{expr}}'].scaleX = this['{{expr}}'].scaleY = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "l",
+            "body": "this['{{expr}}'].label = ${1};"
+        },
+        {
+            "when": ["expression"],
+            "name": "rl",
+            "body": "refreshList(this['{{expr}}'], ${0});"
+        },
+        {
+            "when": ["expression"],
+            "name": "ir",
+            "body": "this['{{expr}}'].itemRenderer = ${0};"
+        },
+        {
+            "when": ["expression"],
+            "name": "src",
+            "body": "this['{{expr}}'].source = ${0};"
+        },
+        {
+            "when": ["expression"],
+            "name": "box",
+            "body": "UI.openBox(new {{expr}}(${0}));"
+        },
+        {
+            "when": ["expression"],
+            "name": "tf",
+            "body": "this['{{expr}}'].textFlow = new egret.HtmlTextParser().parser({${0});"
+        },
+        {
+            "when": ["expression"],
+            "name": "input",
+            "body": "let ${1:txt} = this['{{expr}}'].text.trim();"
+        },
+        {
+            "when": ["expression"],
+            "name": "e",
+            "body": "this['{{expr}}'].enabled = ${1|true,false|};"
+        },
+        {
+            "when": ["expression"],
+            "name": "conf",
+            "body": "getConfig('{{expr}}_json')"
+        },
+        {
+            "when": ["expression"],
+            "name": "res",
+            "body": "checkRes('{{expr}}_json')"
+        },
+        {
+            "when": ["expression"],
+            "name": "s",
+            "body": "singleton({{expr}})"
+        },
+        {
+            "when": ["expression"],
+            "name": "event",
+            "body": "this.disposeArr.push(event(${1:this}, {{expr}}, this.${2}, this));"
+        },
+        {
+            "when": ["expression"],
+            "name": "log",
+            "body": "console.log({{expr}});"
+        },
+        {
+            "when": ["expression"],
+            "name": "thm",
+            "body": "checkTheme('eui_{{expr}}_json')"
+        },
+        {
+            "when": ["expression"],
+            "name": "vi",
+            "body": "this['{{expr}}'].visible = this['{{expr}}'].includeInLayout = ${1|true,false|};"
+        },
+        {
+            "when": ["expression"],
+            "name": "full",
+            "body": "{{expr}}.addBehavior(new FullBehavior());"
+        },
+        {
+            "when": ["expression"],
+            "name": "on",
+            "body": "this.on('{{expr}}', this.${1}, this);"
+        },
+        {
+            "when": ["expression"],
+            "name": "touch",
+            "body": "this['{{expr}}'].touchEnabled = this['{{expr}}'].touchChildren = ${1|true,false|};"
+        },
+        {
+            "when": ["expression"],
+            "name": "ac",
+            "body": "this['{{expr}}'].addChild(${0});"
+        },
+        {
+            "when": ["expression"],
+            "name": "vc",
+            "body": "let ${1:info} = getCache('{{expr}}');"
+        },
+        {
+            "when": ["expression"],
+            "name": "rm",
+            "body": "UI.remove({{expr}});"
+        },
+        {
+            "when": ["expression"],
+            "name": "put",
+            "body": "put('{{expr}}');"
+        },
+        {
+            "when": ["expression"],
+            "name": "confirm",
+            "body": "confirm(tr('${1}@{{expr}}')).then(res=> { \n\tif (res == 'yes') { \n\t\t${0} \n\t}\n});"
+        },
+        {
+            "when": ["expression"],
+            "name": "tip",
+            "body": "tooltip(tr('${1}@{{expr}}'));"
+        }
+]
