@@ -110,3 +110,51 @@
 
 .rm : remove UI
 	ANY  →  UI.remove($expr$);
+
+.put : put event
+	ANY → put('$expr$');
+
+.confirm : show confirm
+	ANY  →  confirm(tr('$mod$@$expr$')).then(res=> { if (res == 'yes') { $end$ }})
+
+.tip : show tooltip
+	ANY  →  tip(tr('$mod$@$expr$'));
+
+.req : socket request
+    ANY  →  request('$expr$').then(res => {if (res) { $end$ }});
+
+.reqp : socket request params
+    ANY  →  request('$expr$', {\
+				$params$\
+		}).then(res => {if (res) { $end$ }});
+
+.enum : add enum
+	ANY  → export enum $expr$ {\
+			$end$\
+		}
+
+.interface : interface
+	ANY → export interface $expr$ {\
+			$end$\
+		}
+
+.liyu : check liyu
+	ANY → if (!PropModel.hasEnough(PropType.liyu, $expr$)) {\
+			return;\
+		}
+
+.inarr : in array
+	ANY → if ($expr$.indexOf($value$) > -1) {\
+			$end$\
+		}
+
+.ninarr : not in array
+	ANY → if ($expr$.indexOf($value$) == -1) {\
+			$end$\
+		}
+
+.idx : array index
+	ANY → let $var$ = $expr$.indexOf($value$);
+
+.si : set list selectedIndex
+	ANY → this['$expr$'].selectedIndex = $idx$;
