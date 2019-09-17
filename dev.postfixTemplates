@@ -2,10 +2,7 @@
  ANY  →  promiseView([\
   checkRes('$expr$_json')\
   ]).then((res) => { $end$ });
-
-.v : set display visible
- ANY →  this['$expr$'].visible = $val:enum("true", "false")$;
-
+  
 .list : refresh list
  ANY → this['$expr$'].itemRenderer = $item$;refreshList(this['$expr$'], $arr$);
 
@@ -158,3 +155,6 @@
 
 .si : set list selectedIndex
 	ANY → this['$expr$'].selectedIndex = $idx$;
+	
+.v : set display visible
+	ANY →  this['$expr$'].visible = $val:enum("true", "false")$;
